@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET users/cool listing. */
-router.get('/', function(req, res, next) {
+router.get('/cool', function(req, res, next) {
   res.send('It\'s so cool!');
 });
 module.exports = router;
