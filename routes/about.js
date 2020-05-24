@@ -5,3 +5,5 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('This is the about page');
 });
+
+module.exports = router;
