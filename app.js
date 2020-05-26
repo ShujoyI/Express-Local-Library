@@ -15,6 +15,9 @@ var aboutRouter = require('./routes/about');
 var mongoDB = 'mongodb://127.0.0.1/my_database';
 mongoose.connect(mongoDB, { useNewUrlParser: true});
 
+// get default connect
+var db = mongoose.connection;
+
 var app = express();
 
 // view engine setup
