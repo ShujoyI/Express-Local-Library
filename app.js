@@ -15,8 +15,11 @@ var aboutRouter = require('./routes/about');
 var mongoDB = 'mongodb://127.0.0.1/my_database';
 mongoose.connect(mongoDB, { useNewUrlParser: true});
 
-// get default connect
+// get default connection
 var db = mongoose.connection;
+
+// bind connection to error event, so that we get notifications for connection errors
+db.on('error', console.error.bind(console, 'MongoDB Connection Error: '));
 
 var app = express();
 
