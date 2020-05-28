@@ -11,8 +11,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
 
+var app = express();
+
 // set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1/my_database';
+var mongoDB = 'mongodb+srv://Shuj:Shuj@cluster0-bfdmr.mongodb.net/local_library?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true});
 
 // get default connection
@@ -20,8 +22,6 @@ var db = mongoose.connection;
 
 // bind connection to error event, so that we get notifications for connection errors
 db.on('error', console.error.bind(console, 'MongoDB Connection Error: '));
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
