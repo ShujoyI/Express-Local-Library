@@ -20,4 +20,4 @@ BookSchema
 });
 
 //Export model
-module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('Book', BookSchema);  
