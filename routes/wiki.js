@@ -4,7 +4,7 @@ var router = express.Router();
 
 // Wiki home page route
 router.get('/', function(req, res) {
-    res.send('Wiki home page');
+    res.send('Wiki Home Page');
 })
 
 // About page route.
