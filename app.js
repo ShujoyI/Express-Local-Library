@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
 var aboutRouter = require('./routes/about');
 var wikiRouter = require('./routes/wiki');
 
