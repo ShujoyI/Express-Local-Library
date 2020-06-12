@@ -1,5 +1,6 @@
 var Book = require('../models/book');
 
+// Starting page
 exports.index = function(req, res) {
     res.send('Work in progress: Site Home Page');
 };
