@@ -1,3 +1,3 @@
 # Express-Local-Library
 
-Use Express and MongoDB to create a test library system
+Use Express and MongoDB to create a library system
