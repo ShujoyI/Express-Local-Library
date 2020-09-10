@@ -1,5 +1,4 @@
 var BookInstance = require('../models/bookinstance');
-const { nextTick } = require('async');
 
 // Display list of all BookInstances.
 exports.bookinstance_list = function(req, res, next) {
