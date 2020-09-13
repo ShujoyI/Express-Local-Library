@@ -28,7 +28,7 @@ exports.genre_detail = function(req, res, next) {
             Book.find({ 'genre': req.params.id})
                 .exec(callback);
         },
-    })
+    } //TODO: Callback rendering the page)
 };
 
 // Display Genre create form on GET.
