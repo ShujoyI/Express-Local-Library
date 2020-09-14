@@ -38,7 +38,7 @@ exports.genre_detail = function(req, res, next) {
         }
 
         // Successful, so render
-        res.render('genre_detail', {title: 'Genre Detail", genre: results.genre, genre_books: results.genre_books'} );
+        res.render('genre_detail', {title: 'Genre Detail', genre: results.genre, genre_books: results.genre_books} );
     });
 };
 
