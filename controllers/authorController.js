@@ -30,14 +30,14 @@ exports.author_detail = function(req, res, next) {
     }, function(err, results) {
         if (err) { return next(err); } // Error occurs when using the API
         if (results.author == null) {
-            var err = new Error('Author nod found');
+            var err = new Error('Author not found');
             err.status = 404;
             return next(err);
         }
-    })
 
-    // Successful, so render
-    res.render('author_detail', { title: 'Author Detail', author: results.author, author_books: results.authors_books} );
+        // Successful, so render
+        res.render('author_detail', { title: 'Author Detail', author: results.author, author_books: results.authors_books} );
+    });
 };
 
 // Display Author create form on GET.
