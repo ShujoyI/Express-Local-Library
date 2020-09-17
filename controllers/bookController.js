@@ -41,7 +41,7 @@ exports.book_list = function(req, res) {
 };
 
 // Display detail page for a specific book.
-exports.book_detail = function(req, res) {
+exports.book_detail = function(req, res, next) {
     async.parallel({
         book: function(callback) {
 
