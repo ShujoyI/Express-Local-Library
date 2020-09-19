@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');
+var compression = require('compression');
 var aboutRouter = require('./routes/about');
 var wikiRouter = require('./routes/wiki');
 
@@ -28,6 +29,9 @@ db.on('error', console.error.bind(console, 'MongoDB Connection Error: '));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// compresses all following routes
+app.use(compression());
 
 app.use(logger('dev'));
 app.use(express.json());
