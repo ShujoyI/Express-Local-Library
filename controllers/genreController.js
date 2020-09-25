@@ -71,7 +71,7 @@ exports.genre_create_post = [
         if (!errors.isEmpty()) {
             
             // If there are errors, render the form again with sanitized values/error messages
-            res.render('genre_form', {title: 'Create Genre', genre: genre, errors: errors.array()});
+            res.render('genre_form', {title: 'Add Genre', genre: genre, errors: errors.array()});
             return;
         }
         else {
