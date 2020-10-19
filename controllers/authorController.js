@@ -112,7 +112,9 @@ exports.author_delete_get = function(req, res, next) {
         },
     }, function(err, results) {
         if (err) { return next(err); }
-        if (results.author==null) { // No results.
+        
+        // If no author results are found
+        if (results.author==null) { 
             res.redirect('/catalog/authors');
         }
         // Successful, so render.
