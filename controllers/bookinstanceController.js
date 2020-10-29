@@ -1,7 +1,7 @@
 var BookInstance = require('../models/bookinstance');
 var Book = require ('../models/book');
 
-const { body, validationResult} = require('express-validator/check');
+const { body, validationResult} = require('express-validator');
 const { sanitizeBody } = require('express-validator/filter');
 
 // Display list of all BookInstances.
@@ -54,7 +54,7 @@ exports.bookinstance_create_post = [
     // Validate and sanitise fields.
     body('book', 'Book must be specified').isLength({ min: 1 }).trim().escape(),
     body('imprint', 'Imprint must be specified').isLength({ min: 1 }).trim().escape(),
-    body('status').trim().escape(),​​​​​​
+    body('status').trim().escape(),​​​​​​           
     body('due_back', 'Invalid date').optional({ checkFalsy: true }).isISO8601().toDate(),
     
     // Process request after validation and sanitization.
