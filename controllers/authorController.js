@@ -55,19 +55,13 @@ exports.author_create_get = function(req, res) {
 // Handle Author create on POST.
 exports.author_create_post = [
 
-    // Validate fields.
-    body('first_name').trim().isLength({ min: 1 }).withMessage('First name must be specified.')
+    // Validate and sanitise fields.
+    body('first_name').trim().isLength({ min: 1 }).escape().withMessage('First name must be specified.')
         .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
-    body('family_name').trim().isLength({ min: 1 }).withMessage('Family name must be specified.')
+    body('family_name').trim().isLength({ min: 1 }).escape().withMessage('Family name must be specified.')
         .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
     body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601().toDate(),
     body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
-
-    // Sanitize fields.
-    sanitizeBody('first_name').escape(),
-    sanitizeBody('family_name').escape(),
-    sanitizeBody('date_of_birth').toDate(),
-    sanitizeBody('date_of_death').toDate(),
 
     // Process request after validation and sanitization.
     (req, res, next) => {
