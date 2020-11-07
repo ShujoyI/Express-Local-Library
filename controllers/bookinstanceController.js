@@ -52,9 +52,9 @@ exports.bookinstance_create_get = function(req, res, next) {
 exports.bookinstance_create_post = [
 
     // Validate and sanitise fields.
-    body('book', 'Book must be specified').isLength({ min: 1 }).escape(),
-    body('imprint', 'Imprint must be specified').isLength({ min: 1 }).escape(),
-    body('status').escape(),​​​​​​           
+    body('book', 'Book must be specified').trim().isLength({ min: 1 }).escape(),
+    body('imprint', 'Imprint must be specified').trim().isLength({ min: 1 }).escape(),
+    body('status').escape(),
     body('due_back', 'Invalid date').optional({ checkFalsy: true }).isISO8601().toDate(),
     
     // Process request after validation and sanitization.
